@@ -9,7 +9,8 @@ class App extends Component {
     super(props)
     this.state = {
       query: '',
-      artist: null
+      artist: null,
+      tracks: []
     }
   }
 
@@ -35,7 +36,9 @@ class App extends Component {
       })
       .then(response => response.json())
       .then(json => {
-        console.log('artist\'s top tracks:', json )
+        console.log('artist\'s top tracks:', json );
+        const tracks = json.tracks;
+        this.setState({tracks});
       })
     })
   }
