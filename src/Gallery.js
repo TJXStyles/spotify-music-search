@@ -6,9 +6,9 @@ class Gallery extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      playing: false,
       playingUrl: '',
       audio: null,
-      playing: false
     }
   }
 
@@ -25,13 +25,21 @@ class Gallery extends Component {
       this.setState({
         playing: true, //Prevents playing again when already playing
         playingUrl: previewUrl,
-        audio
+        audio: audio
       })
     } else {
       if (this.state.playingUrl === previewUrl ) { // Pauses the current track if clicked
         this.state.audio.pause();
         this.setState({
           playing: false
+        })
+      } else { // Pause current track when new track is clicked
+        this.state.audio.pause();
+        audio.play();
+        this.setState({
+          playing: true,
+          playingUrl: previewUrl,
+          audio: audio
         })
       }
     }
