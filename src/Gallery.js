@@ -3,9 +3,22 @@ import './App.css';
 
 class Gallery extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      playing: false,
+
+    }
+  }
+
   playAudio(previewUrl) {
     let audio = new Audio(previewUrl)
-    audio.play();
+    if (!this.state.playing) {
+      audio.play();
+      this.setState({
+        playing: true //Prevents playing again when already playing
+      })
+    }
   }
   
   render() {
