@@ -12,18 +12,23 @@ class Profile extends Component {
         <img className="profile-img"
           src={artist.images[0].url}
         />
-        <div>Artist: { artist.name }</div>
-        <div>Followers: { artist.followers.total }</div>
-        <div>
-          {
-            artist.genres.map((genre, k) => {
-              genre = genre !== artist.genres[artist.genres.length -1 ] ? ` ${genre},` : `& ${genre}`
-              return (
-                <span key={k}> {genre}</span>
-              )
-            })
-          }
+
+        <div className="profile-info">
+          <div className="profile-name">Artist: { artist.name }</div>
+          <div className="profile-followers">Followers: { artist.followers.total }</div>
+          <div className="profile-genres">
+            {
+              artist.genres.map((genre, k) => {
+                genre = genre !== artist.genres[artist.genres.length -1 ] ? ` ${genre},` : `& ${genre}`
+                return (
+                  <span key={k}> {genre}</span>
+                )
+              })
+            }
+          </div>
+
         </div>
+       
       </div>
     )
   }
