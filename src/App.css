@@ -11,11 +11,12 @@
 
 .profile {
   display: flex;
-  justify-content: center
+  justify-content: center;
+  padding: 25px;
 }
 
 .profile-info {
-  margin-left: 10px;
+  margin-left: 20px;
   text-align: left;
 }
 
@@ -34,6 +35,10 @@
 .profile-followers,
 .profile-genres {
   font-size: 18px;
+}
+
+.profile-genres {
+  text-transform: capitalize;
 }
 
 /* Gallery */

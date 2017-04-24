@@ -25,7 +25,7 @@ class Gallery extends Component {
       this.setState({
         playing: true, //Prevents playing again when already playing
         playingUrl: previewUrl,
-        audio: audio
+        audio
       })
     } else {
       if (this.state.playingUrl === previewUrl ) { // Pauses the current track if clicked
@@ -39,7 +39,7 @@ class Gallery extends Component {
         this.setState({
           playing: true,
           playingUrl: previewUrl,
-          audio: audio
+          audio
         })
       }
     }
